@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>gridroom</title>
+<style>
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: white;
+	}
+    .flip-container {
+    	width: 100%;
+    	height: 100%;
+        perspective: 1000;
+        display: inline-block;
+        background-color: snow;
+    }
+    .flip-container:hover .card {
+        transform: rotateY(180deg);
+    }
+    .card, .front, .back {
+        width: 100%;
+        height: 100%;
+    }
+    .card {
+        transition: 0.5s;
+        transform-style: preserve-3d;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+    .img-center {
+    	position:absolute;
+		  top:50%;
+		  left:50%;
+		  transform:translate(-50%,-50%);
+		  z-index: 5;
+    }
+
+    .front, .back {
+        backface-visibility: hidden;
+        position: absolute;
+        background-color: white;
+    }
+    .front {
+        z-index: 1;
+        transform: rotateY(180deg);
+    }
+    .back {
+        z-index: 2; /* back side, placed above front */
+        transform: rotateY(0deg);
+    }
+    .parent {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		width: 100vw;
+		height: 100vh;
+	}
+	.div1 { grid-area: 1 / 1 / 2 / 2;}
+	.div2 { grid-area: 1 / 2 / 2 / 3;}
+	.div3 { grid-area: 1 / 3 / 2 / 4;}
+	.div4 { grid-area: 1 / 4 / 2 / 5;}
+	.div5 { grid-area: 1 / 5 / 2 / 6;}
+	.div6 { grid-area: 1 / 6 / 2 / 7;}
+	.div7 { grid-area: 1 / 7 / 2 / 8;}
+	.div8 { grid-area: 2 / 1 / 3 / 2;}
+	.div9 { grid-area: 2 / 2 / 3 / 3;}
+	.div10 { grid-area: 2 / 3 / 3 / 4;}
+	.div11 { grid-area: 2 / 4 / 3 / 5;}
+	.div12 { grid-area: 2 / 5 / 3 / 6;}
+	.div13 { grid-area: 2 / 6 / 3 / 7;}
+	.div14 { grid-area: 2 / 7 / 3 / 8;}
+	.div15 { grid-area: 3 / 1 / 4 / 2;}
+	.div16 { grid-area: 3 / 2 / 4 / 3;}
+	.div17 { grid-area: 3 / 3 / 4 / 4;}
+	.div18 { grid-area: 3 / 4 / 4 / 5;}
+	.div19 { grid-area: 3 / 5 / 4 / 6; }
+	.div20 { grid-area: 3 / 6 / 4 / 7; }
+	.div21 { grid-area: 3 / 7 / 4 / 8; }
+	.div22 { grid-area: 4 / 1 / 5 / 2; }
+	.div23 { grid-area: 4 / 2 / 5 / 3; }
+	.div24 { grid-area: 4 / 3 / 5 / 4; }
+	.div25 { grid-area: 4 / 4 / 5 / 5; }
+	.div26 { grid-area: 4 / 5 / 5 / 6; }
+	.div27 { grid-area: 4 / 6 / 5 / 7; }
+	.div28 { grid-area: 4 / 7 / 5 / 8; }
+	.div29 { grid-area: 5 / 1 / 6 / 2; }
+	.div30 { grid-area: 5 / 2 / 6 / 3; }
+	.div31 { grid-area: 5 / 3 / 6 / 4; }
+	.div32 { grid-area: 5 / 4 / 6 / 5; }
+	.div33 { grid-area: 5 / 5 / 6 / 6; }
+	.div34 { grid-area: 5 / 6 / 6 / 7; }
+	.div35 { grid-area: 5 / 7 / 6 / 8; }
+
+</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="div1">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div2">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div3">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div4">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div5">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div6">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div7">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div8">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div9">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div10">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div11">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+	    </div>
+		<div class="div12">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div13">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div14">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div15">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div16">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div17">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div18">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	                <!-- front side content -->
+	                <img src="images/gridroom_logo.svg" class="img-center">
+	            </div>
+	            <div class="back">
+	                <!-- back side content -->
+	                <img src="images/g_logo.svg" class="img-center">
+	            </div>
+	        </div>
+	    	</div>
+	    </div>
+		<div class="div19">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div20">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div21">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div22">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div23">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div24">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div25">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div26">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div27">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div28">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div29">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div30">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div31">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div32">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div33">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div34">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	            </div>
+	            <div class="back">
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+		<div class="div35">
+			<div class="flip-container">
+	        <div class="card">
+	            <div class="front">
+	         
+	            </div>
+	            <div class="back">
+	     
+	            </div>
+	        </div>
+	    	</div>
+		</div>
+    </div>
+</body>
+</html>
