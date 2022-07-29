@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>THHA v1 Instruction</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<div class="instruct-block">
+	<h2 class="instruct">지시문</h2>
+	</div>
+
+<script src="jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+  			function clock() {
+  				var now = new Date();
+	  			var hours = now.getHours();
+	  			var minutes = now.getMinutes();
+	  			var seconds = now.getSeconds();
+
+	  			$('.hours').text(hours).css({
+	  				'font-size': hours/2 + 'vw'
+	  			});
+	  			$('.minutes').text(minutes).css({
+	  				'font-size': minutes/2 + 'vw'
+	  			});
+	  			$('.seconds').text(seconds).css({
+	  				'font-size': seconds/2 + 'vw'
+	  			});
+  			}
+  			function random(a) {
+  				return a[Math.floor(Math.random() * a.length)];
+  			}
+
+  			function instruct() {
+  				var now = new Date();
+	  			var hours = now.getHours();
+	  			var minutes = now.getMinutes();
+	  			var seconds = now.getSeconds();
+	  			var instructs = [
+		  			'당신이 닿을 수 있는 가장 높은 위치의 이미지를 모두 고르시오.',
+		  			'당신이 닿을 수 있는 가장 낮은 위치의 이미지를 모두 고르시오.',
+		  			'당신의 키에 걸치는 행의 이미지를 모두 고르시오.',
+		  			'당신의 눈높이에 걸치는 행의 이미지를 모두 고르시오.',
+		  			'당신이 발차기를 할 수 있는 높이에 있는 이미지를 마음껏 고르시오.',
+		  			'당신이 점프해서 닿을 수 있는 가장 높은 위치의 이미지를 고르시오.',
+		  			'당신의 신체에 가장 적절한 위치의 이미지를 적당히 고르시오.',
+		  			'당신이 양팔을 벌려 닿을 수 있는 가장 먼 거리의 이미지를 2개 고르시오.',
+		  			'당신이 여섯 발걸음을 옮겨 도달한 이미지를 고르시오.',
+		  			'당신의 손이 닿는 대로 6개의 이미지를 고르시오.',
+		  			'인간이라고 판단한 이미지를 모두 고르시오.',
+		  			'인간이라고 판단하지 않은 이미지를 모두 고르시오.',
+		  			'인간의 형태가 드러나는 이미지를 모두 고르시오.',
+		  			'인간의 형태를 찾아볼 수 없는 이미지를 모두 고르시오.',
+		  			'인간으로서의 경험이 연상되는 이미지를 고르시오.',
+		  			'인간적인 매력이 느껴지는 이미지를 고르시오.',
+		  			'친구가 되고 싶지 않은 이미지를 모두 고르시오.',
+		  			'동료가 되고 싶은 이미지를 모두 고르시오.',
+		  			'가장 행복해 보이는 이미지를 고르시오.',
+		  			'가장 귀여운 이미지를 고르시오.',
+		  			'눈이 마주친 이미지를 모두 고르시오.',
+		  			'고르고 싶지 않은 이미지를 모두 고르시오.',
+		  			'현재의 공간에 가장 잘 어울리는 이미지를 고르시오.',
+		  			'다음으로 참여할 사람이 고를 듯한 이미지를 추측하여 고르시오.',
+		  			'당신의 디지털 기기에 남겨지지 않을만한 이미지를 고르시오.',
+		  			'어디서 본 것 같은 이미지를 모두 고르시오.',
+		  			'가장 쓸모 있어 보이는 이미지를 고르시오.',
+		  			'이쯤에서 제외되면 좋을 만한 이미지를 모두 고르시오.',
+		  			'당신이 정한 하나의 기준에 부합하는 이미지를 모두 고르시오.',
+		  			'당신이 정한 하나의 기준에 어긋나는 이미지를 모두 고르시오.'
+  				];
+  				setInterval(function() {
+	  				$('.instruct').text(random(instructs));	  			
+  				}, 6000);
+  			}
+  			clock();
+  			instruct();
+  			setInterval(clock, 1000);
+  		});
+</script>
+</body>
+</html>
