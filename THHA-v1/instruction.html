@@ -12,41 +12,52 @@
 		.instruct {
 			color: white;
 		}
+		.instruct-block {
+			height: 100vh;
+		}
+		.seconds {
+			width: 1.6vw;
+			height: 20px;
+			background-color: white;
+		}
 	</style>
 </head>
 <body>
 	<div class="instruct-block">
 	<h2 class="instruct">지시문</h2>
 	</div>
+	<div class="clock">
+		<div class="seconds"></div>
+	</div>
 
 <script src="jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
   			function clock() {
-  				var now = new Date();
-	  			var hours = now.getHours();
-	  			var minutes = now.getMinutes();
-	  			var seconds = now.getSeconds();
-
+	  			var now = new Date();
+	  			var hour = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+    			var minute = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+    			var second = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();
+    			$('.seconds').css({
+	  				'width': seconds* 1.6 + 'vw'
+	  			});
+    			var hours = '';
+   				var minutes = '';
+    			var seconds = '';
 	  			$('.hours').text(hours).css({
 	  				'font-size': hours/2 + 'vw'
 	  			});
 	  			$('.minutes').text(minutes).css({
 	  				'font-size': minutes/2 + 'vw'
 	  			});
-	  			$('.seconds').text(seconds).css({
-	  				'font-size': seconds/2 + 'vw'
-	  			});
+	  			
   			}
   			function random(a) {
   				return a[Math.floor(Math.random() * a.length)];
   			}
 
   			function instruct() {
-  				var now = new Date();
-	  			var hours = now.getHours();
-	  			var minutes = now.getMinutes();
-	  			var seconds = now.getSeconds();
+  				
 	  			var instructs = [
 		  			'당신이 닿을 수 있는 가장 높은 위치의 이미지를 모두 고르시오.',
 		  			'당신이 닿을 수 있는 가장 낮은 위치의 이미지를 모두 고르시오.',
@@ -79,12 +90,12 @@
 		  			'당신이 정한 하나의 기준에 부합하는 이미지를 모두 고르시오.',
 		  			'당신이 정한 하나의 기준에 어긋나는 이미지를 모두 고르시오.'
   				];
-  				setInterval(function() {
-	  				$('.instruct').text(random(instructs));	  			
-  				}, 60000);
+	  			$('.instruct').text(random(instructs));	  			
+  				
   			}
   			clock();
   			instruct();
+  			setInterval(instruct, 60000);
   			setInterval(clock, 1000);
   		});
 </script>
