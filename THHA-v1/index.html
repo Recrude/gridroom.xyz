@@ -15,6 +15,7 @@
 <video autoplay muted loop id="myVideo">
   <source src="movies/mainposter18sloop.mp4" type="video/mp4">
 </video>
+<div class="article-div">
 <article>
 <div class="header">
 	<div class="title-grid-left">
@@ -45,7 +46,7 @@ THHA v1에 방문하여, 당신이 인간임을 증명하세요.
 </div>
 -->
 </article>
-
+</div>
 <script src="jquery.min.js"></script>
 <script>
 	$(window).on('load', function() {
@@ -55,12 +56,10 @@ THHA v1에 방문하여, 당신이 인간임을 증명하세요.
   }, 1000);
 });
 	$(document).ready(function(){
-			$('article').click(function() {
-				$('article').toggleClass('article-clicked');
+			$('.article-div').click(function() {
+				$('.article-div').toggleClass('article-clicked');
 			});
-			$('.getridoffit').click(function() {
-				$('article').toggleClass('article-clicked');
-			});
+		
 		});
 </script>
 </body>
