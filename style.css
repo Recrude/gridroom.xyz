@@ -205,11 +205,6 @@ button:hover {
 article {
   max-width: 1000px;
   margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
   background-color: white;
   padding: 32px;
   opacity: 0;
@@ -248,15 +243,15 @@ article.is-loaded{
   -o-transition: opacity 1s;
   transition-delay: 3s;
 }
-.article-clicked {
-  animation: slideDown 1s;
-  top: 130%;
+.article-div{
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
 }
-@keyframes slideDown {
-  0% {
-    top: 50%;
-  }
-  100% {
-    top: 130%;
-  }
+.article-clicked {
+  top: 130%;
+  transition: 1s;
 }
