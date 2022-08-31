@@ -20,13 +20,29 @@
 			height: 20px;
 			background-color: white;
 		}
+		.instruct {
+			font-size: 10vw;
+		  	font-weight: 900;
+		  	line-height: 1.3;
+		  	padding-left: 1vw;
+		}
+		.instruct-block {
+		  width: 100%;
+		  height: 100vh;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		}
+		.hidden {
+		  display: none;
+		}
 	</style>
 </head>
 <body>
 	<div class="instruct-block">
 	<h2 class="instruct">지시문</h2>
 	</div>
-	<div class="clock">
+	<div class="clock hidden">
 		<div class="seconds"></div>
 	</div>
 
