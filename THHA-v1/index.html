@@ -9,6 +9,104 @@
 		body {
 			background-color: black;
 		}
+		article {
+		  max-width: 1000px;
+		  margin: 0 auto;
+		  background-color: white;
+		  padding: 32px;
+		  opacity: 0;
+		  transition: 1s;
+		  box-shadow: 1px 10px 10px;
+		}
+		.header {
+		  width: 100%;
+		  height: 60px;
+		  display: flex;
+		  flex-direction: row;
+		  justify-content: space-between;
+		  margin-bottom: 16px;
+		}
+		.title-grid-left {
+		  height: 60px;
+		  display: flex;
+		  flex-direction: row;
+		  justify-content: justify;
+		  gap: 10px;
+		}
+		.title-grid-right {
+		  display: flex;
+		  height: 60px;
+		  justify-content: right;
+		}
+		#myVideo {
+		  position: absolute;
+		  z-index: 1;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  background-position: center;
+		  min-width: 100%;
+		  min-height: 100%;
+		  text-align: center;
+		  justify-content: center;
+		  transition: 1s;
+		  opacity: 0;
+		}
+		#myVideo.is-loaded {
+		  opacity: 1;
+		  transition: opacity 1s;
+		  -webkit-transition: opacity 1s;
+		  -o-transition: opacity 1s;
+		}
+
+		.footer {
+		  text-align: center;
+		  padding-top: 16px;
+		}
+
+
+		article.is-loaded{
+		  opacity: 1;
+		  transition: opacity 1s;
+		  -webkit-transition: opacity 1s;
+		  -o-transition: opacity 1s;
+		  transition-delay: 3s;
+		}
+		.article-div{
+		  position: absolute;
+		  z-index: 9;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  transition: 1s;
+		}
+		.article-clicked {
+		  top: 130%;
+		  transition: 1s;
+		}
+
+		@media only screen and (max-width: 600px) {
+			p {
+				font-size: 12px;
+
+			}
+			h2 {
+				font-size: 12px;
+			}
+			article {
+				width: 400px;
+			}
+			.title-grid-left {
+				height: 50px;
+			}
+			.title-grid-right {
+				height: 50px;
+			}
+			.header {
+				height: 40px;
+			}
+
+		}
 	</style>
 </head>
 <body>
